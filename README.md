@@ -1,40 +1,39 @@
-Moengage Integration package contains all third party libraries and sdk integrations. All [exports](/modules/_index_.html).
-* [BEAMER](/modules/_beamer_beamer_.html)
-* [GTM](/modules/_gtm_gtm_.html)
-* [LOGROCKET](/modules/_logrocket_logrocket_.html)
-* [RECEPTIVE](/modules/_receptive_receptive_.html)
-* [SEGMENT](/modules/_segment_segment_.html) | [TRACKING](/modules/_segment_tracking_.html)
-* [SENTRY](/modules/_sentry_sentry_.html)
-* [STATUSPAGE](/modules/_statuspage_statuspage_.html)
+# Logrocket Webpack Plugin
+
+A webpack plugin acting as an interface to [Logrocket CLI](https://github.com/LogRocket/logrocket-cli)
+
+## Installation
+`webpack-logrocket-plugin` requires at least webpack 4 or greater.
+
+Using npm:
+
+```npm install @sentry/webpack-plugin --save-dev```
+
+Using yarn:
+
+```yarn add @sentry/webpack-plugin --dev```
 
 ## Usage
-
 ```
-import { Logrocket, Sentry } from '@moengage/integrations';
-import { tracking } from '@moengage/integrations';
-```
+const WebpackLogrocketPlugin = require('webpack-logrocket-plugin);
 
-### Configuration
-In the root component import [Integrations](/modules/_integrations_.html) and set configuration [options](modules/_integrations_.html#integrationoptions). This is optional.
-
+const config = {
+  plugins: [
+    new WebpackLogrocketPlugin({
+      path: '',         
+      release: '',     
+      apiKey: '',      
+      urlPrefix: '', 
+    }),
+  ],
+};
 ```
-import { Integrations } from '@moengage/integrations';
+Check official logrocket cli [documentation](https://docs.logrocket.com/docs/stacktraces#section-uploading-source-maps-to-logrocket) to understand above options 
 
-Integrations.options = {
-    forceAll: false,
-    force: [],
-    env: Constants.ENVIRONMENTS.DEVELOPMENT
-}
-```
-
-### Initializations
-
-```
-import { initializeLogrocket, initializeBeamer } from '@moengage/integrations;
-```
-
-## Documentation
-
-```
-http://moengage-core.moeinternal.com/v[VERSION]/index.html
-```
+### Options
+|Option     |Type    |Required   |Description 
+|-----------|--------|-----------|-----------
+|path       |`string`|required   | One or more paths that Sentry CLI should scan recursively for sources. It will upload all .map files and match associated .js files.
+|release    |`string`|required   | Unique identifier for the release.
+|apikey     |`string`|required   | Logrocket API Key, used to communicate with logrocket.
+|urlPrefix  |`string`|optional   | URL prefix to add to the beginning of all filenames. Defaults to ~/ but you might want to set this to the full URL. This is also useful if your files are stored in a sub folder. eg: url-prefix '~/static/js'.
