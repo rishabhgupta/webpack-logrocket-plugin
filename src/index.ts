@@ -1,6 +1,7 @@
 import { promisify } from "util";
+import * as childProcess from "child_process";
 
-const exec = promisify(require("child_process").exec);
+const exec = promisify(childProcess.exec);
 
 const ERROR_MESSAGES = {
     missingRequiredParam: (param: string) =>
