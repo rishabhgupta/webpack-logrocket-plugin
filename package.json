@@ -3,11 +3,13 @@
     "version": "0.0.0",
     "description": "SDK Integrations",
     "keywords": [
-        "moengage",
-        "integrations"
+        "rishabh",
+        "logrocket",
+        "webpack",
+        "plugin"
     ],
-    "author": "rishabhgupta <rishabh@moengage.com>",
-    "homepage": "https://github.com/moengage/dashboard-commons#readme",
+    "author": "rishabhgupta <rishabhgupta@msn.com>",
+    "homepage": "https://github.com/rishabhgupta/webpack-logrocket-plugin#readme",
     "license": "MIT",
     "main": "./lib/index.js",
     "types": "./lib/index.d.ts",
@@ -19,11 +21,11 @@
         "lib"
     ],
     "publishConfig": {
-        "access": "private"
+        "access": "public"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/moengage/dashboard-commons.git"
+        "url": "git+https://github.com/rishabhgupta/webpack-logrocket-plugin"
     },
     "scripts": {
         "prebuild": "rimraf ./build",
@@ -37,7 +39,7 @@
         "format": "prettier --write \"./src/**/*.{ts,tsx,scss}\""
     },
     "bugs": {
-        "url": "https://github.com/rishabhgupta/moengage-js/issues"
+        "url": "https://github.com/rishabhgupta/webpack-logrocket-plugin/issues"
     },
     "dependencies": {
         "logrocket-cli": "^0.12.0"
@@ -52,6 +54,7 @@
         "eslint": "^5.16.0",
         "prettier": "2.0.5",
         "rimraf": "^2.6.3",
+        "standard-version": "^9.3.2",
         "typedoc": "^0.17.1",
         "typescript": "^3.8.3"
     }

@@ -27,6 +27,6 @@
         "**/__test__/**"
     ],
     "typedocOptions": {
-        "out": "./build",
+        "out": "./docs",
     }
 }
