@@ -32,9 +32,9 @@ const config = {
 ### Options
 |Option     |Type    |Required   |Description 
 |-----------|--------|-----------|-----------
-|path       |`string`|required   | One or more paths that Sentry CLI should scan recursively for sources. It will upload all .map files and match associated .js files.
+|path       |`string`|required   | Path that Logrocket CLI should scan recursively for sources. It will upload all .map files and match associated .js files.
 |release    |`string`|required   | Unique identifier for the release.
 |apikey     |`string`|required   | Logrocket API Key, used to communicate with logrocket.
-|urlPrefix  |`string`|optional   | URL prefix to add to the beginning of all filenames. Defaults to ~/ but you might want to set this to the full URL. This is also useful if your files are stored in a sub folder. eg: url-prefix '~/static/js'.
+|urlPrefix  |`string`|optional   | URL prefix to add to the beginning of all filenames. Defaults to `~/` but you might want to set this to the full URL. This is also useful if your files are stored in a sub folder. eg: url-prefix `'~/static/js'`.
 
 Check official logrocket cli [documentation](https://docs.logrocket.com/docs/stacktraces#section-uploading-source-maps-to-logrocket) to understand above options.
